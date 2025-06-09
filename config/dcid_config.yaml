@@ -1,0 +1,52 @@
+GENERAL:
+  GPU_ID: 3
+  SEED: 123
+  WORKER: 2
+  SAVE_PREFIX: './out_dir/train_huawei'
+  EXP_NAME: 'epoch_500'
+
+DATA:
+  DATA_TYPE: DCID # Please specify the type of the dataset 
+  TRAIN_DATASET: ./DCID/train # The training data path
+  TEST_DATASET: ./DCID/test # The test data path
+  VAL_DATASET: ./DCID/val # The val data path
+  TRAIN_WORD: 'p40'
+  ALIGN: True # Use aligned ultra-wide angle images
+
+MODEL:
+  EN_FEATURE_NUM: 48 # The initial channel number of dense blocks of encoder
+  EN_INTER_NUM: 32 # The growth rate (intermediate channel number) of dense blocks of encoder
+  DE_FEATURE_NUM: 64 # The initial channel number of dense blocks of decoder
+  DE_INTER_NUM: 32 # The growth rate (intermediate channel number) of dense blocks of decoder
+  SAM_NUMBER: 1 # The number of SAM for each encoder or decoder level; set 1 for our ESDNet, and 2 for ESDNet-L
+
+TRAIN: 
+  BATCH_SIZE: 8
+  LOADER: crop # The loading way for training data, e.g., crop, resize, default; see ./dataset/load_data.py
+  CROP_SIZE: 768 # Set the crop size if LOADER==crop 768 
+  RESIZE_SIZE: 192 # Set the resizing size if LOADER==crop 384
+  SAVE_ITER: 500 # Save training images/results at each SAVE_ITER*n iter
+  SAVE_EPOCH: 50 # Save training images/results at each SAVE_EPOCH*n EPOCH
+  LOAD_EPOCH: False # If specify it, loading the corresponding model for resuming training
+  TRAIN_TEST: False # if test the output ,set number, test training images at each TRAIN_TEST*n epoch
+  LAM: 1 # The loss weight for L1 loss
+  LAM_P: 1 # The loss weight for perceptual loss
+  ADD_WIDEANGLE: True  # add wideangle into model,use mw dataset, 'Attention' fro use attention way to concat uw and moire
+
+TEST:
+  TEST_EPOCH: 500 # Input 'auto' for loading the latest model
+  SAVE_IMG: False # The file type (e.g., jpg, png) for saving the output image; set False to avoid saving
+  LOAD_PATH: False # If specify a load path for a checkpoint, TEST_EPOCH will be deprecated
+  EVALUATION_METRIC: True # If True, calculate metrics
+  EVALUATION_TIME: False # If True, calculate processing time per image; EVALUATION_METRIC will be deprecated for accurate statistics
+  EVALUATION_COST: False #If True, calculate MACs and Parameters number
+  ADD_ALIGN_TIME: False # add align_time 
+
+
+SOLVER:
+  EPOCHS: 500 # The total training epochs
+  T_0: 500 # The total epochs for the first learning cycle (learning rate warms up then)
+  T_MULT: 1 # The learning cycle would be (T_0, T_0*T_MULT, T_0*T_MULT^2, T_0*T_MULT^3, ...)
+  ETA_MIN: 0.000001 # Initial learning rate in each learning cycle
+  BASE_LR: 0.0002 # Learning rate in the end of each learning cycle
+
