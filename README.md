@@ -4,14 +4,12 @@
 
 ## Overview
 
-  <div style="overflow: hidden;">
-  <div style="float: left; width: 50%;">
-    We propose an efffcient DCID method, where a lightweight UW image encoder is integrated into an existing deMoiréing network and a fast two-stage image alignment manner is present. Moreover, we construct a large-scale real-world dataset with diverse mobile phones and monitors, containing about 9,000 samples. We hope our investigation could inspire more future research in this more practical setting in image demoiréing.
+  We propose an efffcient DCID method, where a lightweight UW image encoder is integrated into an existing deMoiréing network and a fast two-stage image alignment manner is present. Moreover, we construct a large-scale real-world dataset with diverse mobile phones and monitors, containing about 9,000 samples. We hope our investigation could inspire more future research in this more practical setting in image demoiréing.
+  <div style="text-align: center;">
+  <img src="./figs/intro.png" alt="intro" style="width: 50%; height: auto;" />  
   </div>
-  <div style="float: right; width: 50%;">
-    <img src="./figs/intro.png" alt="intro" style="float: right;" />  
-  </div>
-</div>
+  
+
 
 
 ##  Datasets 
