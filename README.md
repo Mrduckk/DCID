@@ -34,8 +34,8 @@ The configuration file (config) uses the parameter TRAIN_WORD to denote three di
 - p40: Represents the huawei dataset.
 
 The parameter align determines whether to use pre-generated alignment results from Keypoint Matching based Alignment(KMA) during training:
-false: The network will perform the first-stage alignment internally during the training process.
-true: The network will directly use the precomputed alignment results from the align folder.
+- False: The network will perform the first-stage alignment internally during the training process.
+- True: The network will directly use the precomputed alignment results from the align folder.
 Specifically, it will use the file named w_align.jpg in the align directory for alignment, skipping the KMA during training.
 
 ```
