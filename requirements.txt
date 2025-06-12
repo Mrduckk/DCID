@@ -1,0 +1,11 @@
+torch>=1.9.1
+torchvision>=0.3
+numpy
+opencv-python
+matplotlib
+mmcv
+kornia
+termcolor
+timm
+rich
+mmcv

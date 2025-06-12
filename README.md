@@ -1,5 +1,6 @@
 # Image DeMoiréing Using Dual Camera Fusion on Mobile Phones
  IEEE International Conference on Multimedia & Expo 2025 (ICME 2025)
+###  [Dataset](https://huggingface.co/datasets/Mrduckk/DCID) | [Paper](https://arxiv.org/pdf/2506.08361)
 
 
 ## Overview
@@ -19,12 +20,7 @@ Download Links:
 
 2. HuggingFace: [here](https://huggingface.co/datasets/Mrduckk/DCID)
 
-## Environments
-All dependencies for defining the environment are provided in environment.yaml.
-```
-conda env create -f environment.yaml
-conda activate dcid
-```
+
 
 ## Train
 
@@ -52,3 +48,16 @@ python test.py --config ./config/test_dcid_config.yaml
 ## Acknowledgement
 This project is built based on [UHDM](https://github.com/CVMI-Lab/UHDM?tab=readme-ov-file).
 
+## Citations
+
+```bibtex
+@misc{mei2025imagedemoireingusingdual,
+      title={Image Demoir\'eing Using Dual Camera Fusion on Mobile Phones}, 
+      author={Yanting Mei and Zhilu Zhang and Xiaohe Wu and Wangmeng Zuo},
+      year={2025},
+      eprint={2506.08361},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.08361}, 
+}
+```
